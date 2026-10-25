@@ -108,6 +108,30 @@ class ReelShortDownload:
 async def run(episodes_list, dir_name):
     await download_all_async(episodes_list, dir_name, max_concurrent=10)
 
+async def download_all_async(episodes_list, dir_name, max_concurrent=5):
+    """并发下载所有视频"""
+    os.makedirs(dir_name, exist_ok=True)
+
+    semaphore = asyncio.Semaphore(max_concurrent)
+
+    async def download_with_semaphore(index, chapter_id):
+        async with semaphore:
+            download_url = f'https://www.reelshort.com/episodes/wo-shi-ni-die-693b8f146a2054699d00944d-{chapter_id}'
+            file_name = f'{dir_name}/{str(index).zfill(3)}.mp4'
+            print(f'📥 开始下载 [{index}/{len(episodes_list)}]')
+
+            await download_with_ytdlp_async(download_url, file_name)
+
+    tasks = []
+    for index, chapter_id in enumerate(episodes_list, start=1):
+        task = asyncio.create_task(
+            download_with_semaphore(index, chapter_id)
+        )
+        tasks.append(task)
+
+    await asyncio.gather(*tasks, return_exceptions=True)
+
+    print("🎉 所有下载任务完成！")
 
 def main(url, dir_=None):
     url = clean_reel_short_url(url)
