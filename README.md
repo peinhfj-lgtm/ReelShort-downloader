@@ -1,6 +1,6 @@
-本项目为个人学习与研究目的开源。ReelShort 的协议分析均由我独立完成。此前在与某公司的技术交流中，对方反复询问实现思路，却未推进任何实质合作。为避免重复解释，现将方案公开，供社区参考。技术应当开放，而不是被用来消耗他人时间。
+本项目为个人学习与研究目的开源。ReelShort 的协议分析均由我独立完成。此前在与枫叶互动公司的技术交流中，对方整体水平过于低下，反复询问实现细节之位白嫖方案，却未推进任何实质合作。为避免重复解释，现将方案公开，供社区参考。技术应当开放，而不是被用来消耗他人时间。其中下载模块逻辑自己补全。懂的都懂，不懂问AI。
 
-This project is open-sourced for personal learning and research. The protocol analysis for ReelShort was done independently by me. During a previous technical exchange with a company, the other party repeatedly asked for implementation details without moving forward with any substantive collaboration. To avoid repeating explanations, I am making the approach public for the community. Technology should be open, not used to waste other people's time.
+This project is open-sourced for personal learning and research purposes. The protocol analysis of ReelShort was completed independently by me. During previous technical exchanges with Maple Leaf Interactive, the overall level of the other party was too low—they repeatedly asked about implementation details in an attempt to get the solution for free, yet did not advance any substantive cooperation. To avoid repeating explanations, I am now making the solution public for the community's reference. Technology should be open, rather than being used to consume others' time. The download module logic is to be completed on your own. Those who know, know. If you don't know, ask AI.
 
 # ReelShort Downloader
 
